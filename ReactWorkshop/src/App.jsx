@@ -1,15 +1,16 @@
-import Header from "./assets/Header"
-import Block from "./assets/Block"
-import Footer from "./assets/Footer"
+import Header from "./components/Header"
+import Row from "./components/Row"
+import Footer from "./components/Footer"
+import "./App.css"
 
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Header/>
-      <Block/>
+      <Row></Row>
       <Footer/>
-    </>
+    </div>
   )
 }
 
