@@ -16,6 +16,7 @@
 
 .block-title, .block-description {
     margin: 0.5rem 5%;
+    background-color: white;
 }
 
 .block-btn {
