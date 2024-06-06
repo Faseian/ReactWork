@@ -1,5 +1,7 @@
 .row-container {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    padding: 5rem;
+    grid-template-columns: repeat(5, auto);
+    row-gap: 5rem;
     justify-content: space-around;
 }

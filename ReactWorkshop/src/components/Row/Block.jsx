@@ -3,7 +3,7 @@ import "./Block.css"
 
 function Block() {
     function someFunction() {
-        console.log("it works");
+        console.log("tess is a fart monkey");
     }
 
     return (
