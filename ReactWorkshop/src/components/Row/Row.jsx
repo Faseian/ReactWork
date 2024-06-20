@@ -5,7 +5,7 @@ import "./Row.css"
 function Row() {
     return (
         <div className="section-container">
-            <h3>Genre Ig</h3>
+            <h3 className="genre-container">Genre Ig</h3>
             <div className="row-container">
                 <Block></Block>
                 <Block></Block>
