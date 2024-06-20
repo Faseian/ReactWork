@@ -1,0 +1,4 @@
+.footer-container {
+    display: flexbox;
+    justify-content: right;
+}

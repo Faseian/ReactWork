@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-
   "scripts": {
     "start": "node server/index.js",
     "server": "nodemon server/index.js",
@@ -18,6 +17,7 @@
   "dependencies": {
     "@dotenvx/dotenvx": "^0.44.1",
     "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "express-xss-sanitizer": "^1.2.0"
   }

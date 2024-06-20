@@ -11,7 +11,7 @@ function Block() {
             <img src="https://picsum.photos/200/300" alt="" className="block-img"/>
             <h1 className="block-title">Title</h1>
             <p className="block-description">description</p>
-            <button onClick={someFunction} className="block-btn">Click Muthafucka</button>
+            <button onClick={someFunction} className="block-btn">More Info</button>
         </div>
     )
 }

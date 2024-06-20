@@ -7,6 +7,7 @@
     margin: 0.5rem;
     background-color: white;
     height: fit-content;
+    align-items: center;
 }
 
 .block-img {
@@ -26,7 +27,8 @@
     padding:0.5rem 1rem;
     text-align: center;
     text-decoration: none;
+    color: white;
     margin: 15px 30px;
     cursor: pointer;
-    background-color: #d3d3d1;
+    background-color: #5f96fc;
 }
