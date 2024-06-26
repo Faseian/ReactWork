@@ -4,16 +4,19 @@ import "./Row.css"
 
 function Row() {
     async function logAnimes() {
-        fetch('https://myanimelist.p.rapidapi.com/anime/top/all', {
-            param: {
-                limit: '10'
-            },    
+        const url = 'https://api.themoviedb.org/3/account/null/lists?page=1';
+        const options = {
+            method: 'GET',
             headers: {
-                    'x-rapidapi-key': '80e8cae6e6mshb20aa21a8f7babbp1602c6jsna179ded48bab',
-                    'x-rapidapi-host': 'myanimelist.p.rapidapi.com'
-                }
-            })
-                .then(response => response.json).then(data => console.log(data.results))
+                accept: 'application/json',
+                Authorization: ''
+            }
+        };
+
+            fetch(url, options)
+                .then(res => res.json())
+                .then(json => console.log(json))
+                .catch(err => console.error('error:' + err));
     }
 
     logAnimes();
