@@ -3,6 +3,7 @@ import Block from "./Block";
 import "./Row.css"
 
 function Row() {
+    /*
     async function logAnimes() {
         const url = 'https://api.themoviedb.org/3/account/null/lists?page=1';
         const options = {
@@ -20,6 +21,7 @@ function Row() {
     }
 
     logAnimes();
+    */
     return (
         <div className="section-container">
             <h3 className="genre-container">Genre Ig</h3>
