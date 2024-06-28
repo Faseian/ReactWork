@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { fetchAnimes } from "../../store/animes"
 import "./Row.css"
 
-function Row() {
+function Row(props) {
     const animes = useSelector((state)=> state.animes.list.data);
     const dispatch = useDispatch();
 
@@ -15,14 +15,13 @@ function Row() {
 
     return (
         <div className="section-container">
-            <h3 className="genre-container">Genre Ig</h3>
+            <h3 className="genre-container">{props.genre}</h3>
             <div className="row-container">
             { animes ?
             animes.map(animes => {
                 return(<Block 
-                    key = {animes.myanimelist_id}
+                    key = {animes.id}
                     title = {animes.title}
-                    img = {animes.image}
                     />)
             })
             :null}
