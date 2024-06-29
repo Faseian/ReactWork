@@ -12,6 +12,23 @@ app.use(xss());
 
 const port = process.env.PORT || 3001;
 
+const options = {
+    method: 'GET',
+    headers: {
+        'x-rapidapi-key': process.env.APIKEY,
+        'x-rapidapi-host': process.env.APIHOST
+    }
+}
+
+async function fetchGenres() {
+    try {
+        const res = await axios.get(options);
+        return res
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)
 })

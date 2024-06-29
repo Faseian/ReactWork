@@ -1,7 +1,9 @@
+import 'dotenv/config';
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
+const key = process.env.APIKEY;
+const host = process.env.APIHOST;
 const url = 'https://anime-db.p.rapidapi.com/anime';
 const options = {
     method: 'GET',
@@ -11,8 +13,8 @@ const options = {
         genre: ''
     },
     headers: {
-        'x-rapidapi-key': '80e8cae6e6mshb20aa21a8f7babbp1602c6jsna179ded48bab',
-        'x-rapidapi-host': 'anime-db.p.rapidapi.com'
+        'x-rapidapi-key': key,
+        'x-rapidapi-host': host
     }
 }
 export const fetchAnimes = createAsyncThunk(
