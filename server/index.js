@@ -12,22 +12,41 @@ app.use(xss());
 
 const port = process.env.PORT || 3001;
 
-const options = {
+const genreOptions = {
     method: 'GET',
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
         'x-rapidapi-host': process.env.APIHOST
     }
 }
-
-async function fetchGenres() {
-    try {
-        const res = await axios.get(options);
-        return res
-    } catch (error) {
-        console.log(error);
+const animeOptions = {
+    method: 'GET',
+    params: {
+        page:'1',
+        size:'10',
+        genres:'Action'
+    },
+    headers: {
+        'x-rapidapi-key': process.env.APIKEY,
+        'x-rapidapi-host': process.env.APIHOST
     }
 }
+
+app.get('/genres', async (req,res) => {
+    const response = await axios.get("https://anime-db.p.rapidapi.com/genre", genreOptions)
+    .then(function(response) {
+        res.json({data: response.data})
+    })
+    .catch(error => console.log(error));
+})
+
+app.get('/animes', async (req,res) => {
+    const response = await axios.get("https://anime-db.p.rapidapi.com/anime", animeOptions)
+    .then(function(response) {
+        res.json({data: response.data})
+    })
+    .catch(error => console.log(error));
+})
 
 app.listen(port, () => {
     console.log(`Server is running on ${port}`)

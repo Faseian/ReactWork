@@ -1,22 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import 'dotenv/config';
-const key = process.env.APIKEY;
-const host = process.env.APIHOST;
-const url = 'https://anime-db.p.rapidapi.com/genre';
-const options = {
-    method: 'GET',
-    headers: {
-        'x-rapidapi-key': key,
-        'x-rapidapi-host': host
-    }
-}
 
 export const fetchGenres = createAsyncThunk(
     'genres/fetchGenres',
     async(thunkAPI)=> {
         try {
-            const res = await axios.get(url,options).then((res) => res.data
+            const res = await axios.get(`http://localhost:3000/genres`).then((res) => res.data
         );
             return res; 
         } catch (error) {
@@ -28,7 +17,8 @@ export const fetchGenres = createAsyncThunk(
 export const genresSlice = createSlice({
     name: 'genres',
     initialState:{
-        list:[]
+        list:[],
+        
     },
     reducers: {
         addGenre:(state)=> {

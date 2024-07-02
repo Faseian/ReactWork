@@ -8,12 +8,12 @@ import "./App.css"
 
 
 function App() {
-  const genres = useSelector((state)=> state.genres.list);
+  const genres = useSelector((state)=> state.genres.list.data);
   const dispatch = useDispatch();
   useEffect(()=> {
     dispatch(fetchGenres());
 },[])
-
+  console.log(genres)
   return (
     <div className="App">
       <Header/>
@@ -21,8 +21,10 @@ function App() {
       genres.map(genres => {
         return(
           <Row
+          key = {genres._id}
           genre = {genres._id}
-          />
+          >
+          </Row>
         );
       })
       :null}
