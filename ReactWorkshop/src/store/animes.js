@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+
 export const fetchAnimes = createAsyncThunk(
     'genres/fetchAnimes',
     async(thunkAPI)=> {
         try {
-            const res = await axios.get(`http://localhost:3000/animes`).then((res) => res.data
+            const res = await axios.get(`http://localhost:3000/animes`, {
+                params: {
+                    genre: ""
+                }
+            }).then((res) => res.data
         );
             return res; 
         } catch (error) {

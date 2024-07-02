@@ -15,10 +15,10 @@ function Row(props) {
 */
     return (
         <div className="section-container">
-            <h3 className="genre-container">{props.genre}</h3>
+            <h3 className="genre-container" id = {props.key}>{props.genre}</h3>
             <div className="row-container">
         
-         {/* animes ?
+         { animes ?
             animes.map(animes => {
                 return(<Block 
                     key = {animes.id}
@@ -26,7 +26,7 @@ function Row(props) {
                     title = {animes.title}
                     />)
             })
-            :null */}
+            :null }
             </div>
         </div>
     )
