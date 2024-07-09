@@ -5,7 +5,7 @@ export const fetchGenres = createAsyncThunk(
     'genres/fetchGenres',
     async(thunkAPI)=> {
         try {
-            const res = await axios.get(`http://localhost:3000/genres`).then((res) => res.data
+            const res = await axios.get(`http://localhost:3000/api/animes/genres`).then((res) => res.data
         );
             return res; 
         } catch (error) {
@@ -17,8 +17,7 @@ export const fetchGenres = createAsyncThunk(
 export const genresSlice = createSlice({
     name: 'genres',
     initialState:{
-        list:[],
-        
+        list:[]
     },
     reducers: {
         addGenre:(state)=> {

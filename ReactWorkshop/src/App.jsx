@@ -4,16 +4,19 @@ import Footer from "./components/Footer"
 import  React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import { fetchGenres } from "./store/genres"
-import "./App.css"
+import "./App.css"  
+import { fetchAnimes } from "./store/animes";
 
 
 function App() {
+
   const genres = useSelector((state)=> state.genres.list.data);
   const dispatch = useDispatch();
+
   useEffect(()=> {
     dispatch(fetchGenres());
-},[])
-  console.log(genres)
+  },[])
+
   return (
     <div className="App">
       <Header/>

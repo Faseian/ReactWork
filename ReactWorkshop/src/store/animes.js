@@ -3,14 +3,14 @@ import axios from "axios";
 
 
 export const fetchAnimes = createAsyncThunk(
-    'genres/fetchAnimes',
+    'animes/fetchAnimes',
     async(thunkAPI)=> {
         try {
-            const res = await axios.get(`http://localhost:3000/animes`, {
+            const res = await axios.get(`http://localhost:3000/api/animes/animes`, {
                 params: {
-                    genre: ""
+                    list: ""
                 }
-            }).then((res) => res.data
+            }).then((res) => res.data.data
         );
             return res; 
         } catch (error) {
