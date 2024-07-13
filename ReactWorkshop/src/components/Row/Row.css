@@ -14,6 +14,10 @@
     justify-content: space-around;
 }
 
+.row-container::-webkit-scrollbar {
+    display: none
+}
+
 .genre-container {
     background-color: #739ff0;
     position: relative;

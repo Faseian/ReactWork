@@ -27,7 +27,7 @@ export const genresSlice = createSlice({
     extraReducers:(builder)=>{
         builder
         .addCase(fetchGenres.pending, (state) => {
-            state.loading = true;
+            state.pending = true;
         })
         .addCase(fetchGenres.fulfilled, (state, action) => {
             state.loading = false;

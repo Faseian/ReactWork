@@ -1,14 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import getAnimePath from "./requests";
 import axios from "axios";
 
-
+//Fetches animes from server route to API
 export const fetchAnimes = createAsyncThunk(
     'animes/fetchAnimes',
-    async(thunkAPI)=> {
+    async(genre, path, thunkAPI)=> {
         try {
-            const res = await axios.get(`http://localhost:3000/api/animes/animes`, {
+            const res = await axios.get(path, {
                 params: {
-                    list: ""
+                    genre: genre._id
                 }
             }).then((res) => res.data.data
         );
@@ -18,15 +19,14 @@ export const fetchAnimes = createAsyncThunk(
         }
     }
 );
-
 export const animesSlice = createSlice({
     name:'animes',
     initialState:{
         list:[]
     },
     reducers:{
-        addAnime:(state)=> {
-            
+        addAnimeGenre:(state, action)=> {
+            state.list = action.payload;
         }
     },
     extraReducers:(builder)=>{
@@ -44,6 +44,5 @@ export const animesSlice = createSlice({
         })
     }
 })
-
-export const {addAnime} = animesSlice.actions;
+export const {addAnimeGenre} = animesSlice.actions;
 export default animesSlice.reducer;

@@ -1,26 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Block from "./Block";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux"
-import { fetchAnimes } from "../../store/animes"
+import { fetchAnimes, addAnimeGenre } from "../../store/animes"
 import "./Row.css"
 
 function Row(props) {
-    const animes = useSelector((state) => state.animes.list.data);
-    const dispatch = useDispatch();
-
+    const [animes, setAnimes] = useState([]);
+    
     useEffect(()=> {
-      dispatch(fetchAnimes());
+        async function fetchData() {
+            const request = await axios.get(props.genre ,props.fetchURL)
+            setAnimes(request.data);
+            return request;
+        }
+        fetchData();
     },[])
-
+    console.log(animes)
     return (
         <div className="section-container">
-            <h3 className="genre-container" id = {props.key}>{props.genre}</h3>
+            <h3 className="genre-container">{props.genre}</h3>
             <div className="row-container">
             
             { animes ?
             animes.map(animes => {
                 return(<Block 
-                    key = {animes.id}
+                    key = {animes._id}
                     img = {animes.image}
                     title = {animes.title}
                     />)

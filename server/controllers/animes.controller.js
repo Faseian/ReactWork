@@ -8,19 +8,19 @@ const genreOptions = {
         'x-rapidapi-host': process.env.APIHOST
     }
 }
-const animeOptions = {
+let animeOptions = {
     method: 'GET',
     params: {
         page:'1',
         size:'10',
-        genres:'Action'
+        genres:''
     },
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
         'x-rapidapi-host': process.env.APIHOST
     }
 }
-
+//Gets genres from API
 export const getGenres = {
     async listGenres(req,res) {
         const response = await axios.get("https://anime-db.p.rapidapi.com/genre", genreOptions)
@@ -30,15 +30,18 @@ export const getGenres = {
         .catch(error => console.log(error));
     }
 }
-
+//Gets animes from API
 export const getAnimes = {
     async listAnimes(req,res) {
-        const response = await axios.get("https://anime-db.p.rapidapi.com/anime", animeOptions)
+        animeOptions.params.genres = req.query.genre
+        const response = await axios.get(`https://anime-db.p.rapidapi.com/anime`, animeOptions)
         .then(function(response) {
-            res.json({data: response.data})
+            res.json({data: response.data});
         })
         .catch(error => console.log(error));
     }
 }
-
+function getAnimeByGenre(genre) {
+    console.log(genre.AsyncFunction)
+}
 export default {getGenres, getAnimes};
