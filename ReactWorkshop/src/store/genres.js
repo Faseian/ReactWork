@@ -20,9 +20,16 @@ export const genresSlice = createSlice({
         list:[]
     },
     reducers: {
-        addGenre:(state)=> {
-            
-        }
+        removeGenres(genres) {
+            for(let i = 0; i < genres.length; i++) {
+                if (genres[i] === 'Hentai' || genres[i] === 'Ecchi' || genres[i] === 'Boys Love' || genres[i] === 'Girls Love' || genres[i] === 'Erotica') {
+                  const genre = genres.splice(i, 1);
+                  this.setState({
+                    list: genre
+                  })
+                }
+            }
+           }
     },
     extraReducers:(builder)=>{
         builder
@@ -39,5 +46,5 @@ export const genresSlice = createSlice({
     }
 })
 
-export const {addGenre} = genresSlice.actions;
+export const {removeGenres} = genresSlice.actions;
 export default genresSlice.reducer;

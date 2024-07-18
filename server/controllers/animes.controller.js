@@ -13,7 +13,7 @@ let animeOptions = {
     params: {
         page:'1',
         size:'10',
-        genres:''
+      
     },
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
@@ -33,7 +33,7 @@ export const getGenres = {
 //Gets animes from API
 export const getAnimes = {
     async listAnimes(req,res) {
-        animeOptions.params.genres = req.query.genre
+        animeOptions.params.genres = req.query.genre;
         const response = await axios.get(`https://anime-db.p.rapidapi.com/anime`, animeOptions)
         .then(function(response) {
             res.json({data: response.data});
@@ -41,7 +41,5 @@ export const getAnimes = {
         .catch(error => console.log(error));
     }
 }
-function getAnimeByGenre(genre) {
-    console.log(genre.AsyncFunction)
-}
+
 export default {getGenres, getAnimes};

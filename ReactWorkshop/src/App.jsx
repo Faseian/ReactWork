@@ -3,20 +3,16 @@ import Row from "./components/Row/Row"
 import Footer from "./components/Footer"
 import  React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux"
-import { fetchGenres } from "./store/genres"
-import _ from 'lodash'
-import "./App.css"  
+import { fetchGenres, removeGenres } from "./store/genres"
 import {getAnimePath} from "./store/requests";
 
 function App() {
   const fetchedGenres = useSelector((state)=> state.genres.list.data);
   const dispatch = useDispatch();
-
+  removeGenres(fetchedGenres);
   useEffect(()=> {
     dispatch(fetchGenres());
   },[])
-  const genre = fetchedGenres[0];
-  console.log(getAnimePath(genre))
   return (
     <div className="App">
       <Header/>
@@ -36,14 +32,5 @@ function App() {
     </div>
   )
 }
-  
-  /*
-  for(let i = 0; i < fetchedGenres.length; i++) {
-    if (fetchedGenres[i] === 'Hentai' || fetchedGenres[i] === 'Ecchi' || fetchedGenres[i] === 'Boys Love' || fetchedGenres[i] === 'Girls Love' || fetchedGenres[i] === 'Erotica') {
-      
-    }
-  }
-    */
- 
 
 export default App
