@@ -10,7 +10,8 @@ function Row(props) {
 
     useEffect(()=> {   
         async function fetchData() {
-            const response = await axios.get(props.fetchURL);
+            const response = await axios.get(props.fetchURL)
+            .catch((error) => console.log(error));
             setAnimes(response.data.data.data);
             return response;
         }
