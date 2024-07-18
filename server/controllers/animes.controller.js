@@ -41,5 +41,4 @@ export const getAnimes = {
         .catch(error => console.log(error));
     }
 }
-
 export default {getGenres, getAnimes};

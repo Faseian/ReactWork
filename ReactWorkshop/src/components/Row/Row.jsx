@@ -6,41 +6,16 @@ import { fetchAnimes } from "../../store/animes.js"
 import "./Row.css"
 
 function Row(props) {
-    //const fetchedAnimes = useSelector((state) => state.animes.list.data);
-    //const animeParse = JSON.parse(fetchedAnimes)
     const [animes, setAnimes] = useState([]);
-    /*const [animes, setAnimes] = useState([])
-    console.log(useSelector((state) => state.animes.list.data))
-    try {
-        setAnimes(useSelector((state) => state.animes.list.data))
-    } catch (error) {
-        console.log(error);
-    }*/
-    //const dispatch = useDispatch();
-    //const animelist = animes;
-    /*const getAnimes = {
-        async listAnimes(req,res) {
-            animeOptions.params.genres = req.query.genre;
-            const response = await axios.get(`https://anime-db.p.rapidapi.com/anime`, animeOptions)
-            .then(function(response) {
-                res.json({data: response.data});
-            })
-            .catch(error => console.log(error));
+
+    useEffect(()=> {   
+        async function fetchData() {
+            const response = await axios.get(props.fetchURL);
+            setAnimes(response.data.data.data);
+            return response;
         }
-            */
-    useEffect(()=> { 
-        //dispatch(fetchAnimes(props.fetchURL))
-        const data = {
-        async fetchData(req, res) {
-            const response = await axios.get(props.fetchURL)
-            .then((res) => {
-                res.data.data.data
-            }).catch((error) => console.log(error))
-        }}
-        setAnimes(data.fetchData)
+        fetchData();
     },[props.fetchURL])
-    
-    console.log(animes)
     return (
         <div className="section-container">
             <h3 className="genre-container">{props.genre}</h3>
