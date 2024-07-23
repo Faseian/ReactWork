@@ -28,7 +28,13 @@
     text-overflow: ellipsis;
     width: 100%;
     white-space: nowrap;
+    font-size:x-large;
 }
+
+.block-title :hover {
+    overflow: visible;
+    text-overflow:inherit;
+} 
 
 .block-btn {
     width: 40%;
