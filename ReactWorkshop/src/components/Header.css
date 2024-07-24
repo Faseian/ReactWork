@@ -17,10 +17,14 @@
     text-decoration: solid;
 }
 
+.form-container {
+    background-color: #739ff0;
+}
+
 .search-bar {
     border-radius: 22px;
-    color: #9ba4b6;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #5d6166;
+    font-family: 'Times New Roman', Times, serif;
     font-size: x-large;
     padding: 0.25rem;
     padding-left: 2rem;
