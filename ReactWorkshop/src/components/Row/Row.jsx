@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Block from "./Block";
 import axios from "axios";
-import { useSelector, useDispatch } from "react-redux"
-import { fetchAnimes } from "../../store/animes.js"
 import "./Row.css"
 
 function Row(props) {
