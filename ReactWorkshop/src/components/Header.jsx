@@ -1,14 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import searchIcon from "../assets/search-icon.svg"
 
 import "./Header.css"
 
 function Header() {
+    const [input, setInput] = useState("")
     const [results, setResults] = useState([])
+    useEffect(() => {
+        axios.get(`http://localhost:3000/api/animes/animesearch?input=${input}`)
+        .then((response) => setResults(response.data.data.data))
+    }, [input])
 
-    const fetchData = (value) => {
-        /*
+    /*const fetchData = (value) => {
         try {
             fetch(`http://localhost:3000/api/animes/animesearch?input=${value}`).then((response) => {response.json()}).then((json) => {
                 setResults(json);
@@ -17,16 +21,14 @@ function Header() {
         } catch (error) {
             console.log(error);
         }
-        */
        axios.get(`http://localhost:3000/api/animes/animesearch?input=${value}`)
        .then((response) => {
-        console.log(response.data.data.data)
         return response.data.data.data;
     })
        .catch((error) => console.log(error))
-    }
+    }*/
     const changeHandler = (value) => {
-        setResults(fetchData(value));
+        setInput(value);
         console.log(results)
     }
     return (
