@@ -21,16 +21,31 @@
 }
 
 .search-box {
-    background-color: #739ff0;
+    display: flex;
+    align-items: center;
+    background-color: #ecece9;
+    border-radius: 22px;
 }
 
 .search-bar {
     border-radius: 22px;
-    color: #5d6166;
+    border-style: none;
+    outline: 0;
+    background: transparent;
     font-family: 'Times New Roman', Times, serif;
     font-size: x-large;
     padding: 0.25rem;
     padding-left: 1rem;
-    padding-right: 1rem;
     justify-self: flex-end;
+}
+
+.search-bar, select, textarea {
+    color: 000;
+}
+
+.search-box img {
+    width: 2rem;
+    padding-left: .5em;
+    background: transparent;
+    cursor: pointer;
 }

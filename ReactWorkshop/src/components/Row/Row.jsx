@@ -7,13 +7,9 @@ function Row(props) {
     const [animes, setAnimes] = useState([]);
 
     useEffect(()=> {   
-        async function fetchData() {
-            const response = await axios.get(props.fetchURL)
-            .catch((error) => console.log(error));
-            setAnimes(response.data.data.data);
-            return response;
-        }
-        fetchData();
+        axios.get(props.fetchURL)
+        .then((response) => setAnimes(response.data.data.data))
+        .catch((error) => console.log(error));   
     },[props.fetchURL])
     return (
         <div className="section-container">

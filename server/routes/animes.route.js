@@ -1,9 +1,10 @@
 import express from 'express'
-import {getAnimes, getGenres} from '../controllers/animes.controller.js'
+import {getAnimes, getGenres, getAnimesBySearch} from '../controllers/animes.controller.js'
 const router = express.Router();
 //Creates routes
 router.get('/genres', getGenres.listGenres);
 router.get('/animes', getAnimes.listAnimes);
+router.get('/animesearch', getAnimesBySearch.listAnimesBySearch);
 router.get('/award-winning', getAnimes.listAnimes)
 router.get('/action', getAnimes.listAnimes)
 router.get('/suspense', getAnimes.listAnimes)
