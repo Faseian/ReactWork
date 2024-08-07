@@ -1,0 +1,18 @@
+.search-results-box {
+    display: grid ;
+    background-color: #ecece9;
+    border-radius:7px;
+    margin-top: .5rem;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    background-color: #ecece9;
+    width: 90%;
+    justify-self: center;
+    text-align: center;
+    color: black;
+    max-height: 10rem;
+    overflow-y: hidden;
+}

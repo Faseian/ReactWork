@@ -49,3 +49,9 @@
     background: transparent;
     cursor: pointer;
 }
+
+.search {
+    display: block;
+    background-color: #739ff0;
+    justify-content: space-between;
+}
