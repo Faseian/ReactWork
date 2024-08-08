@@ -1,9 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import  React, { useEffect, lazy, Suspense } from 'react';
 import Header from "./Header";
-import Row from "./Row/Row";
+import Row from './Row/Row.jsx';
 import Footer from "./Footer";
-import  React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchGenres } from "../store/genres";
 import {getAnimePath} from "../store/requests";
@@ -21,12 +19,13 @@ function Home() {
       {fetchedGenres ?
       fetchedGenres.map(genres => {
         return(
+         
           <Row
           key = {genres._id}
           genre = {genres._id}
           fetchURL = {getAnimePath(genres._id)}
-          >
-          </Row>
+          />
+          
         );
       })
       :null}

@@ -5,11 +5,15 @@ import "./Row.css"
 
 function Row(props) {
     const [animes, setAnimes] = useState([]);
-
-    useEffect(()=> {   
-        axios.get(props.fetchURL)
+    useEffect(()=> {
+        const controller = new AbortController();
+        axios.get(props.fetchURL, {signal: controller.signal})
         .then((response) => setAnimes(response.data.data.data))
-        .catch((error) => console.log(error));   
+        .catch((error) => console.log(error));
+        
+        return () => {
+            controller.abort();
+        }
     },[props.fetchURL])
     return (
         <div className="section-container">
