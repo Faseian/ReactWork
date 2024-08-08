@@ -21,7 +21,7 @@ function Home() {
       {fetchedGenres ?
       fetchedGenres.map(genres => {
         if(genres._id === 'Hentai' || genres._id === 'Ecchi' || genres._id === 'Boys Love' || genres._id === 'Girls Love' || genres._id === 'Erotica') {
-          console.log("NSFW")
+          
       } else {
         return(
           <Row

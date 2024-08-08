@@ -21,16 +21,17 @@
 .genre-container {
     background-color: #739ff0;
     position: relative;
-    width: 40%;
+    width: 30%;
     border-radius: 15px;
     border: none;
     text-align: center;
-    align-self:center;
     color: #ecece9;
     text-shadow: 1px 1px 2px grey;
     text-decoration: solid;
     font-size: xx-large;
-    margin: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-width: 6px;

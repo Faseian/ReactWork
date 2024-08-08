@@ -6,8 +6,11 @@ function SearchResults ({results}) {
             {results ? 
             results.map(results => {
                 return (
-                    <div key={results._id}>
-                        {results.alternativeTitles[0]}
+                    <div className="get-results-container">
+                        <img src={results.image} alt={results.title + " image"} className="results-image"/>
+                        <div className="search-results" key={results._id}>
+                            {results.title}
+                        </div>
                     </div>
                 )
             }) : null}

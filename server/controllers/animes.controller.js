@@ -54,7 +54,7 @@ export const getAnimes = {
         .catch((error) => console.log(error));
     }
 }
-
+//Gets anime for search bar
 export const getAnimesBySearch = {
     async listAnimesBySearch(req,res) { 
         animeSearchOptions.params.search = req.query.input;

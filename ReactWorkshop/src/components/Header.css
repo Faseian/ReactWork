@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     background-color: #739ff0;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .title {
@@ -25,6 +25,8 @@
     align-items: center;
     background-color: #ecece9;
     border-radius: 22px;
+    
+    width: 90%;
 }
 
 .search-bar {
@@ -52,6 +54,8 @@
 
 .search {
     display: block;
+    position: relative;
     background-color: #739ff0;
     justify-content: space-between;
+    width: 40%;
 }

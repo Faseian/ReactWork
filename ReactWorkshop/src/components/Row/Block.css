@@ -1,5 +1,5 @@
 .block-container {
-    width: 15rem;
+    width: 13rem;
     border-radius: 1rem;
     border-style: solid;
     border-color: #9ba4b6;
@@ -22,22 +22,24 @@
 }
 
 .block-title, .block-description {
-    margin: 0.5rem 5%;
+    margin: 0.25rem 5%;
     background-color: white;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
     white-space: nowrap;
-    font-size:x-large;
+    font-size:large;
 }
 
 .block-title :hover {
+    cursor: pointer;
     overflow: visible;
     text-overflow:inherit;
+    color: chartreuse;
 } 
 
 .block-btn {
-    width: 40%;
+    width: 50%;
     border: none;
     border-radius: 22px;
     padding:0.5rem 1rem;
