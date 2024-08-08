@@ -1,4 +1,4 @@
-import httpStatus from 'http-status'
+import filterGenres from '../services/animes.services.js'
 import axios from 'axios'
 
 const genreOptions = {
@@ -37,8 +37,9 @@ const animeSearchOptions = {
 export const getGenres = {
     async listGenres(req,res) {
         const response = await axios.get("https://anime-db.p.rapidapi.com/genre", genreOptions)
-        .then(function(response) {
-            res.json({data: response.data})
+        .then(function(genres) {
+            const response =  filterGenres(genres);
+            res.json({data: response});
         })
         .catch(error => console.log(error));
     }

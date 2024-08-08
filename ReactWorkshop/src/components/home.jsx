@@ -20,9 +20,6 @@ function Home() {
       <Header/>
       {fetchedGenres ?
       fetchedGenres.map(genres => {
-        if(genres._id === 'Hentai' || genres._id === 'Ecchi' || genres._id === 'Boys Love' || genres._id === 'Girls Love' || genres._id === 'Erotica') {
-          
-      } else {
         return(
           <Row
           key = {genres._id}
@@ -31,7 +28,6 @@ function Home() {
           >
           </Row>
         );
-      }
       })
       :null}
       <Footer/>
