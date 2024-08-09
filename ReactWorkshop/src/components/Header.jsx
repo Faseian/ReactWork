@@ -30,6 +30,8 @@ function Header() {
                 </div>
                 <SearchResults results = {results}/>
             </div>
+            <a href="">Login</a>
+            <a href="">Signup</a>
         </div>
     )
 }

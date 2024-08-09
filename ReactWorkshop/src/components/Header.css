@@ -10,7 +10,7 @@
 .title {
     background-color: #739ff0;
     align-self: center;
-    justify-self: center;
+    justify-self: flex-start;
     text-align: center;
     padding-right: 5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -37,7 +37,7 @@
     font-size: x-large;
     padding: 0.25rem;
     padding-left: 1rem;
-    justify-self: flex-end;
+    justify-self: center;
 }
 
 .search-bar, select, textarea {
@@ -53,8 +53,13 @@
 
 .search {
     display: block;
+    justify-self: center;
     position: relative;
     background-color: #739ff0;
     justify-content: space-between;
     width: 40%;
+}
+
+a {
+    justify-self: flex-end;
 }
