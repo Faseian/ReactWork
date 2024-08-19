@@ -5,7 +5,8 @@ const genreOptions = {
     method: 'GET',
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
-        'x-rapidapi-host': process.env.APIHOST
+        'x-rapidapi-host': process.env.APIHOST,
+        'Accept-Encoding': 'gzip'
     }
 }
 const animeOptions = {
@@ -17,7 +18,8 @@ const animeOptions = {
     },
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
-        'x-rapidapi-host': process.env.APIHOST
+        'x-rapidapi-host': process.env.APIHOST,
+        'Accept-Encoding': 'gzip'
     }
 }
 
@@ -30,7 +32,8 @@ const animeSearchOptions = {
     },
     headers: {
         'x-rapidapi-key': process.env.APIKEY,
-        'x-rapidapi-host': process.env.APIHOST
+        'x-rapidapi-host': process.env.APIHOST,
+        'Accept-Encoding': 'gzip'
     }
 }
 //Gets genres from API

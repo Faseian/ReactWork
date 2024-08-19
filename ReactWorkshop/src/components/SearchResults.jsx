@@ -6,9 +6,9 @@ function SearchResults ({results}) {
             {results ? 
             results.map(results => {
                 return (
-                    <div className="get-results-container">
+                    <div className="get-results-container" key={results._id}>
                         <img src={results.image} alt={results.title + " image"} className="results-image"/>
-                        <div className="search-results" key={results._id}>
+                        <div className="search-results">
                             {results.title}
                         </div>
                     </div>
