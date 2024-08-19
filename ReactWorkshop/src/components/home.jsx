@@ -1,5 +1,5 @@
 import  React, { useEffect, lazy, Suspense } from 'react';
-import Header from "./Header.jsx";
+import Header from "./Header/Header.jsx";
 import Row from './Row/Row.jsx';
 import Footer from "./Footer";
 import { useSelector, useDispatch } from "react-redux";

@@ -61,3 +61,17 @@
     width: 40%;
 }
 
+.login-signup-container {
+    background-color: #739ff0;
+}
+
+.login-signup {
+    background-color: #739ff0;
+    border: none;
+    color: #ecece9;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    border-radius: 10px;
+    padding: .75rem;
+    cursor: pointer;
+}

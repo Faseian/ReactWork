@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import axios from "axios";
 import SearchResults from "./SearchResults";
-import searchIcon from "../assets/search-icon.svg"
+import searchIcon from "../../assets/search-icon.svg"
 
 function Search() {
     const [input, setInput] = useState("")
