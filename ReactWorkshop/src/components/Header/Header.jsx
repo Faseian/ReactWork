@@ -10,7 +10,7 @@ function Header() {
     }
     return (
         <div className="header-container">
-            <h1 className="title">Anime Lister</h1>
+            <h1 className="title"><a className="title" href="/">Anime Lister</a></h1>
             <Search/>
             <div className="login-signup-container">
                 <button onClick={(e)=> handleClick(e.target.id)} className="login-signup" id="login">Login</button>
