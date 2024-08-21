@@ -23,6 +23,7 @@
     "express": "^4.19.2",
     "express-xss-sanitizer": "^1.2.0",
     "http-status": "^1.7.4",
+    "mongoose": "^8.5.3",
     "react-router-dom": "^6.26.0",
     "swr": "^2.2.5"
   }

@@ -7,6 +7,10 @@ const routesIndex = [
         path:'/animes',
         route:animesRoute,
     },
+    {
+        path:'/auth',
+        route:authRoute
+    }
 ]
 routesIndex.forEach((route)=>{
     router.use(route.path,route.route);
