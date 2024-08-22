@@ -1,0 +1,40 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    background-color: #739ff0;
+    border-style: solid;
+    margin-top: 7.5rem;
+    border-radius: 10px;
+    border-color:#9ba4b6
+}
+
+.signup-input {
+    background-color: #ecece9;
+    border-radius: 10px;
+    border-color: #9ba4b6;
+    align-self: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    width: 50%;
+    height: 2.25rem;
+    margin: 2.5rem;
+    padding-left: .25rem;
+    padding-right: .25rem;
+}
+
+.login-title {
+    text-align: center;
+    margin: 5rem;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #9ba4b6;
+    background-color: #739ff0;;
+    color: #ecece9;
+    text-shadow: 1px 1px 2px grey;
+}
